@@ -1,0 +1,5 @@
+2025-03-09 12:55:45,848 - INFO - STARTING the program
+2025-03-09 12:55:45,848 - ERROR - Error message
+2025-03-09 13:13:50,815 - INFO - STARTING the program
+2025-03-09 13:13:50,815 - ERROR - Error message
+2025-03-09 13:13:50,815 - ERROR - Error occured in /Users/owais-bin-mushtaq/CodeFiles/Hotel-Reservation-Prediction-GCP/tests/test_exception.py, line 10 : Custom error 
