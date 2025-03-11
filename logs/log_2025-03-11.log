@@ -1,0 +1,29 @@
+2025-03-11 22:55:26,180 - INFO - Successfully read the YAML file
+2025-03-11 22:55:26,180 - INFO - Data Ingestion started with my_bucket_5789 and file is Hotel_Reservations.csv
+2025-03-11 22:55:26,180 - INFO - Starting data ingestion process
+2025-03-11 22:55:29,183 - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: timed out
+2025-03-11 22:55:33,201 - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: timed out
+2025-03-11 22:55:35,321 - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [Errno 64] Host is down
+2025-03-11 22:55:35,321 - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-03-11 22:55:35,321 - ERROR - Error while downloading the CSV file
+2025-03-11 22:55:35,322 - ERROR - Custom Exception cannot unpack non-iterable DefaultCredentialsError object
+2025-03-11 22:55:35,322 - INFO - Data Ingestion Completed
+2025-03-11 22:57:21,717 - INFO - Successfully read the YAML file
+2025-03-11 22:57:21,718 - INFO - Data Ingestion started with my_bucket_5789 and file is Hotel_Reservations.csv
+2025-03-11 22:57:21,718 - INFO - Starting data ingestion process
+2025-03-11 22:57:24,720 - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: timed out
+2025-03-11 22:57:28,790 - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: timed out
+2025-03-11 22:57:30,834 - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [Errno 64] Host is down
+2025-03-11 22:57:30,834 - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-03-11 22:57:30,834 - ERROR - Error while downloading the CSV file
+2025-03-11 22:57:30,835 - ERROR - Custom Exception cannot unpack non-iterable DefaultCredentialsError object
+2025-03-11 22:57:30,835 - INFO - Data Ingestion Completed
+2025-03-11 23:00:22,124 - INFO - Successfully read the YAML file
+2025-03-11 23:00:22,124 - INFO - Data Ingestion started with my_bucket_5789 and file is Hotel_Reservations.csv
+2025-03-11 23:00:22,124 - INFO - Starting data ingestion process
+2025-03-11 23:00:25,960 - INFO - CSV file downloaded to artifacts/raw/raw.csv
+2025-03-11 23:00:25,960 - INFO - Started splitting the data
+2025-03-11 23:00:26,096 - INFO - train data saved to artifacts/raw/train.csv
+2025-03-11 23:00:26,096 - INFO - test data saved to artifacts/raw/test.csv
+2025-03-11 23:00:26,097 - INFO - data ingestion process success
+2025-03-11 23:00:26,097 - INFO - Data Ingestion Completed

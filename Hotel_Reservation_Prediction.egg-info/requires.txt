@@ -1,0 +1,6 @@
+pandas
+numpy
+seaborn
+google-cloud-storage
+scikit-learn
+pyyaml
