@@ -8,5 +8,6 @@ Requires-Dist: seaborn
 Requires-Dist: google-cloud-storage
 Requires-Dist: scikit-learn
 Requires-Dist: pyyaml
+Requires-Dist: mlflow
 Dynamic: author
 Dynamic: requires-dist
