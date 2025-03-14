@@ -1,7 +1,5 @@
-artifacts/
-models/
-models
 Hotel_Reservation_Prediction.egg-info/
 logs/
 mlruns/
 /logs
+venv/

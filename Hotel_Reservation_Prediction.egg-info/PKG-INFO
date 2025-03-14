@@ -1,4 +1,4 @@
-Metadata-Version: 2.2
+Metadata-Version: 2.1
 Name: Hotel-Reservation-Prediction
 Version: 0.0.1
 Author: Owais Bin Mushtaq
@@ -9,5 +9,4 @@ Requires-Dist: google-cloud-storage
 Requires-Dist: scikit-learn
 Requires-Dist: pyyaml
 Requires-Dist: mlflow
-Dynamic: author
-Dynamic: requires-dist
+Requires-Dist: imblearn

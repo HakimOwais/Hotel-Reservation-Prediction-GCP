@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from imblearn.over_sampling import SMOTE
+import joblib
 
 from source.custom_exception import CustomException
 from source.custom_logger import get_logger
@@ -13,10 +14,12 @@ from utils.common_functions import read_yaml, load_data
 logger = get_logger(__name__)
 
 class DataProcessing:
-    def __init__(self, train_path, test_path, processed_dir, config_path):
+    def __init__(self, train_path, test_path, 
+                 processed_dir, config_path, encoded_model_output_path):
         self.train_path = train_path
         self.test_path = test_path
         self.processed_dir = processed_dir
+        self.encoded_model_output_path = encoded_model_output_path
         self.config = read_yaml(config_path)
         
         if not os.path.exists(self.processed_dir):
@@ -53,7 +56,7 @@ class DataProcessing:
             for column in skewness[skewness > skew_threshold].index:
                 df[column] = np.log1p(df[column])
 
-            return df
+            return df, label_encoder
         
         except Exception as e:
             logger.error(f"Error during preprocessing {e}")
@@ -113,6 +116,18 @@ class DataProcessing:
         except Exception as e:
             logger.error(f"Error during feature selection step {e}")
             raise CustomException("Error while feature selection", e)
+        
+    def save_encoding_model(self, encoded_model):
+        try:
+            os.makedirs(os.path.dirname(self.encoded_model_output_path),
+                        exist_ok=True)
+            logger.info("Saving the Encoding model")
+            joblib.dump(encoded_model, self.encoded_model_output_path)
+            logger.info(f"Encoding Model saved to : {self.encoded_model_output_path}")
+        except Exception as e:
+            logger.error(f"Error while saving encoding model {e}")
+            raise CustomException("Failed to save encoding model" ,  e)
+        
     
     def save_data(self, df, file_path):
         try:
@@ -131,14 +146,16 @@ class DataProcessing:
             train_df = load_data(self.train_path)
             test_df = load_data(self.test_path)
 
-            train_df = self.preprocess_data(train_df)
-            test_df = self.preprocess_data(test_df)
+            train_df, train_encoder = self.preprocess_data(train_df)
+            test_df, _ = self.preprocess_data(test_df)
 
             train_df = self.balance_data(train_df)
             test_df = self.balance_data(test_df)
 
             train_df = self.select_features(train_df)
-            test_df = test_df[train_df.columns]  
+            test_df = test_df[train_df.columns] 
+
+            self.save_encoding_model(train_encoder) 
 
             self.save_data(train_df,PROCESSED_TRAIN_DATA_PATH)
             self.save_data(test_df , PROCESSED_TEST_DATA_PATH)
@@ -151,6 +168,9 @@ class DataProcessing:
     
     
 if __name__=="__main__":
-    processor = DataProcessing(TRAIN_FILE_PATH,TEST_FILE_PATH,PROCESSED_DIR,CONFIG_PATH)
+    processor = DataProcessing(TRAIN_FILE_PATH,TEST_FILE_PATH,
+                               PROCESSED_DIR,
+                               CONFIG_PATH,
+                               ENCODING_MODEL_OUTPUT_PATH)
     processor.process()       
     
