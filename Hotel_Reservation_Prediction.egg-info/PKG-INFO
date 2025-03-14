@@ -10,3 +10,5 @@ Requires-Dist: scikit-learn
 Requires-Dist: pyyaml
 Requires-Dist: mlflow
 Requires-Dist: imblearn
+Requires-Dist: fastapi[all]
+Requires-Dist: uvicorn

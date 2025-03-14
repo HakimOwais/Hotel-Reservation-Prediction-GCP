@@ -6,3 +6,5 @@ scikit-learn
 pyyaml
 mlflow
 imblearn
+fastapi[all]
+uvicorn
