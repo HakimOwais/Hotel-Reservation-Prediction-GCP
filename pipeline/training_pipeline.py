@@ -13,7 +13,7 @@ if __name__=="__main__":
 
     ### 2. Data Processing
 
-    processor = DataProcessing(TRAIN_FILE_PATH,TEST_FILE_PATH,PROCESSED_DIR,CONFIG_PATH)
+    processor = DataProcessing(TRAIN_FILE_PATH,TEST_FILE_PATH,PROCESSED_DIR,CONFIG_PATH, ENCODING_MODEL_OUTPUT_PATH)
     processor.process()
 
     ### 3. Model Training

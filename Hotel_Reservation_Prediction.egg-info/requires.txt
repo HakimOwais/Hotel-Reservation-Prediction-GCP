@@ -7,4 +7,4 @@ pyyaml
 mlflow
 imblearn
 fastapi[all]
-uvicorn
+uvicorn[standard]

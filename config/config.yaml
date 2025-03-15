@@ -26,3 +26,7 @@ data_processing:
     - no_of_special_requests
   skewness_threshold : 5
   no_of_features : 10
+  cols_to_encode : 
+    - type_of_meal_plan 
+    - room_type_reserved
+    - market_segment_type

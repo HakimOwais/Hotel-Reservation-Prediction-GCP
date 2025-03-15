@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.2
 Name: Hotel-Reservation-Prediction
 Version: 0.0.1
 Author: Owais Bin Mushtaq
@@ -11,4 +11,6 @@ Requires-Dist: pyyaml
 Requires-Dist: mlflow
 Requires-Dist: imblearn
 Requires-Dist: fastapi[all]
-Requires-Dist: uvicorn
+Requires-Dist: uvicorn[standard]
+Dynamic: author
+Dynamic: requires-dist
