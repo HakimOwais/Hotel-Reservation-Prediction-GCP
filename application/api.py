@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
 import pandas as pd
-import joblib
 from application.schema import ReservationPrediction
 from pipeline.inference_pipeline import load_pipeline
 
@@ -38,7 +37,6 @@ async def get_prediction(prediction_details: ReservationPrediction):
     pred = 'Not Cancel' if prediction[0] == 1 else 'Cancel'
 
     return {"Status of Reservation": pred}
-
 
 if __name__ == "__main__":
     uvicorn.run(app)
