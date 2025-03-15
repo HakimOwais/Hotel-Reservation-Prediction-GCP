@@ -5,3 +5,4 @@ mlruns/
 venv/
 Hotel_Reservation_Prediction/
 __pycache__/
+Hotel_Reservation_Prediction.egg-info/
