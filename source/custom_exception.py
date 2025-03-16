@@ -25,7 +25,7 @@ class CustomException(Exception):
         Returns:
             str: Formatted error message with file name and line number.
         """
-        _, _, exc_tb = error_detail  # Unpack sys.exc_info()
+        _, _, exc_tb = traceback.sys.exc_info()  # Unpack sys.exc_info()
 
         file_name = exc_tb.tb_frame.f_code.co_filename  # Extract file name
         line_number = exc_tb.tb_lineno  # Extract line number
