@@ -39,4 +39,4 @@ async def get_prediction(prediction_details: ReservationPrediction):
     return {"Status of Reservation": pred}
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(app, port=8080)
