@@ -35,7 +35,7 @@ pipeline{
         stage('Building and pushing docker image to Google cloud registry'){
             steps{
                 withCredentials([file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
-                    scripts{
+                    script {
                         echo 'Building and pushing docker image to Google cloud registry .......'
                         sh '''
                         export PATH=$PATH:$(GCLOUD_PATH)
