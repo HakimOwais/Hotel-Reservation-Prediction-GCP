@@ -12,10 +12,13 @@ WORKDIR /app  # Corrected from "WORDIR" to "WORKDIR"
 
 # Update package lists and install required system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgomp1 \  # Dependency required for LightGBM or similar libraries
-    && apt-get clean \  # Remove unnecessary package data to reduce image size
-    && rm -rf /var/lib/apt/lists/*  # Free up space by deleting cached package lists
-
+    # Dependency required for LightGBM or similar libraries
+    libgomp1 \  
+    # Remove unnecessary package data to reduce image size
+    && apt-get clean \  
+    # Free up space by deleting cached package lists
+    && rm -rf /var/lib/apt/lists/* 
+     
 # Copy all project files into the container
 COPY . .
 
