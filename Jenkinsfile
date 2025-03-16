@@ -46,10 +46,8 @@ pipeline{
 
                         gcloud auth configure-docker --quiet
 
-                        docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
-
-                        docker push gcr.io/${GCP_PROJECT}/ml-project:latest
-
+                        docker buildx create --use
+                        docker buildx build --platform linux/amd64 -t gcr.io/${GCP_PROJECT}/ml-project:latest --push .
                         '''
                     }
                 }
